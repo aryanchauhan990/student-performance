@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Student Performance Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+
+        <label for="gender"> Choose Studemt's Gender : </label>
+        <select id='gender' name='gender'>
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        
+        <label for="lunch"> Type of lunch student is having : </label>
+        <select id='lunch' name='lunch'>
+            <option value="1">Standard</option>
+            <option value="0">Free/Reduced</option>
+        </select>
+        <br>
+        <br>
+        <br>
+
+        <label for="test preparation course"> Test Preparation Course : </label>
+        <select id='test preparation course' name='test preparation course'>
+            <option value="1">Completed</option>
+            <option value="0">None</option>
+        </select>
+        <br>
+        <br>
+        <br>
+
+        
+        <label for="race/ethnicity_group "> Race/Ethnicity Group of the Student: </label>
+        <select id='race/ethnicity_group ' name= race/ethnicity_group >
+            <option value="0">Group A</option>
+            <option value="1">Group B</option>
+            <option value="2">Group C</option>
+            <option value="3">Group D</option>
+            <option value="4">Group E</option>
+        </select>
+        <br>
+        <br>
+        <br>
+
+        <label for="parental level of education"> Parental Level of Education: </label>
+        <select id='parental level of education' name= parental level of education>
+            <option value="0">Associate's Degree</option>
+            <option value="1">Bachelor's Degree</option>
+            <option value="2">High School</option>
+            <option value="3">Master's Degree</option>
+            <option value="3">Some College</option>
+            <option value="3">Some High School</option>
+        </select>
+        <br>
+        <br>
+        <br>
+
+
+
+
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   
+
+   <h1<center><b>{{ prediction_text }} </b></center></h1>
+    
+
+ </div>
+
+
+</body>
+</html>
